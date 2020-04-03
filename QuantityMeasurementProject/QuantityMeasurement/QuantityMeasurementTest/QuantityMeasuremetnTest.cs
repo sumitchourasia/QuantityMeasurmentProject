@@ -10,8 +10,8 @@ namespace QuantityMeasurementTest
         public void ConvertFeetToInch()
         {
             IQuantityMeasurement QuantityObject = QuantityMeasurementFactory.Create("FeetAndInch");
-            int feet = 1; 
-            int inch = 12; 
+            int feet = 0; 
+            int inch = 0; 
             bool expected = QuantityObject.ConvertAndMeasure(feet, inch);
             Assert.AreEqual(true,expected);
         }
