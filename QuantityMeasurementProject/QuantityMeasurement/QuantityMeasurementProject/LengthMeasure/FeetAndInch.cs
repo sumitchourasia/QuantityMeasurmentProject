@@ -4,6 +4,8 @@ using System.Text;
 
 namespace QuantityMeasurementProject.LengthMeasure
 {
+
+  
     /// <summary>
     /// class to convert and measure the length unit feet and inch
     /// </summary>
@@ -15,28 +17,24 @@ namespace QuantityMeasurementProject.LengthMeasure
         /// <param name="unit1"></param>
         /// <param name="unit2"></param>
         /// <returns></returns>
-        public override bool ConvertAndMeasure(Object feet, Object inch)
+        public override bool ConvertAndMeasure<X,Y>(X obj1, Y obj2)
         {
-            ////check for null
-            if (feet == null || inch == null)
-                return false;
-
-            ////check for reference
-            if (Object.ReferenceEquals(feet, inch))
+            Console.WriteLine(obj2.GetType().ToString());
+            try
             {
-                return true;
+               return obj1.Equals(obj2);
             }
-
-            ////check for type
-            if (!feet.GetType().Equals(inch.GetType()))
+            catch(NullReferenceException)
             {
-                return false;
+                try
+                {
+                   return obj2.Equals(obj1);
+                }
+                catch(NullReferenceException )
+                {
+                    return false;
+                }
             }
-
-            ////check for equality
-            int paramfeet = Convert.ToInt32(feet);
-            int paraminch = Convert.ToInt32(inch);
-            return (paramfeet * 12 == paraminch);
         }
     }
 }

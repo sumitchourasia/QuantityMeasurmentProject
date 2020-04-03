@@ -1,4 +1,6 @@
 ﻿using QuantityMeasurementProject.LengthMeasure;
+using QuantityMeasurementProject.TemperatureMeasure;
+/*using QuantityMeasurementProject.WeightMeasure;*/
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -19,7 +21,11 @@ namespace QuantityMeasurementProject
         {
             if (type.Equals("FeetAndInch"))
                 return new FeetAndInch();
-            
+            else if (type.Equals("CelciusAndFahrenhiet"))
+                return new CelciusAndFahrenhiet();
+            /* else if (type.Equals("KiloAndGram"))
+                 return new KiloAndGram();*/
+
             return null;
         }
     }
