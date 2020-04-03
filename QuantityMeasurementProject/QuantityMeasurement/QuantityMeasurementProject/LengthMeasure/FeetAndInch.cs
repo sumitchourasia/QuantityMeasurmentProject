@@ -4,9 +4,17 @@ using System.Text;
 
 namespace QuantityMeasurementProject.LengthMeasure
 {
-    
+    /// <summary>
+    /// class to convert and measure the length unit feet and inch
+    /// </summary>
     public class FeetAndInch : Length
     {
+        /// <summary>
+        /// overide the abstract method
+        /// </summary>
+        /// <param name="unit1"></param>
+        /// <param name="unit2"></param>
+        /// <returns></returns>
         public override object ConvertAndMeasure(object unit1, object unit2)
         {
             if (unit1 == null || unit2 == null)
