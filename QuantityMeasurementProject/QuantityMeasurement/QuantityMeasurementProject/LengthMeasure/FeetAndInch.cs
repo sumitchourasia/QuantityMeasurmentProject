@@ -6,9 +6,13 @@ namespace QuantityMeasurementProject.LengthMeasure
 {
     public class FeetAndInch : Length
     {
-        public override bool ConvertAndMeasure(int unit1, int unit2)
+        public override object ConvertAndMeasure(object unit1, object unit2)
         {
-            return unit1 * 12 == unit2;
+            if (unit1 == null || unit2 == null)
+                return null;
+            int feet = Convert.ToInt32(unit1);
+            int inch = Convert.ToInt32(unit2);
+            return feet * 12 == inch;
         }
     }
 }

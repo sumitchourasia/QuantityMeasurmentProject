@@ -6,6 +6,6 @@ namespace QuantityMeasurementProject.LengthMeasure
 {
     public abstract class Length : IQuantityMeasurement 
     {
-        public abstract bool ConvertAndMeasure(int unit1, int unit2);
+        public abstract object ConvertAndMeasure(object unit1, object unit2);
     }
 }

@@ -6,6 +6,6 @@ namespace QuantityMeasurementProject
 {
     public interface IQuantityMeasurement
     {
-        bool ConvertAndMeasure(int unit1, int unit2);
+        object ConvertAndMeasure(object unit1, object unit2);
     }
 }

@@ -11,9 +11,10 @@ namespace QuantityMeasurementTest
         {
             IQuantityMeasurement QuantityObject = QuantityMeasurementFactory.Create("FeetAndInch");
             int feet = 0; 
-            int inch = 0; 
-            bool expected = QuantityObject.ConvertAndMeasure(feet, inch);
-            Assert.AreEqual(true,expected);
+            int inch = 0;
+            object expected = QuantityObject.ConvertAndMeasure(feet, inch);
+            object actual = true ;
+            Assert.AreEqual(actual,expected);
         }
     }
 }
