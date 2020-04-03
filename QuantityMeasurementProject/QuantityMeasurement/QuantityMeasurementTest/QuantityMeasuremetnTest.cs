@@ -56,5 +56,32 @@ namespace QuantityMeasurementTest
             Assert.AreEqual(null, expected);
         }
 
+        /// <summary>
+        /// TestCase 1.5 to test feet and inch for equality
+        /// </summary>
+        [TestCase]
+        public void MeasureFeetAndInchForEquality()
+        {
+            IQuantityMeasurement QuantityObject = QuantityMeasurementFactory.Create("FeetAndInch");
+            int feet = 1;
+            int inch = 12;
+            object expected = QuantityObject.ConvertAndMeasure(feet, inch);
+            object actual = true;
+            Assert.AreEqual(actual, expected);
+        }
+
+        /// <summary>
+        /// TestCase 1.6 to test feet and inch for Inequality
+        /// </summary>
+        [TestCase]
+        public void MeasureFeetAndInchForInequality()
+        {
+            IQuantityMeasurement QuantityObject = QuantityMeasurementFactory.Create("FeetAndInch");
+            int feet = 1;
+            int inch = 11;
+            object expected = QuantityObject.ConvertAndMeasure(feet, inch);
+            object actual = false;
+            Assert.AreEqual(actual, expected);
+        }
     }
 }
