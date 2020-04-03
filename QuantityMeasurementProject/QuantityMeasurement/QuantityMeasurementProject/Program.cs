@@ -6,7 +6,16 @@ namespace QuantityMeasurementProject
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("measure feet and inch");
+
+           int choice = Convert.ToInt32(Console.ReadLine());
+
+            switch(choice)
+            {
+                case 1:
+                    
+                    break;
+            }
         }
     }
 }
