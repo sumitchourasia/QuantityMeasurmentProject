@@ -45,5 +45,16 @@ namespace QuantityMeasurementTest
             object actual = "QuantityMeasurementProject.LengthMeasure.FeetAndInch";
             Assert.AreEqual(actual, expected.GetType().ToString());
         }
+
+        /// <summary>
+        /// TestCase 1.4  to test for Reference validity
+        /// </summary>
+        [TestCase]
+        public void MeasureFeetAndInchForRef()
+        {
+            object expected = QuantityMeasurementFactory.Create("WrongClass");
+            Assert.AreEqual(null, expected);
+        }
+
     }
 }
