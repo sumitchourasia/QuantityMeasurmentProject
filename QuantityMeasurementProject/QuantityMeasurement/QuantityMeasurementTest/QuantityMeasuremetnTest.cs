@@ -18,8 +18,8 @@ namespace QuantityMeasurementTest
             IQuantityMeasurement QuantityObject = QuantityMeasurementFactory.Create("FeetAndInch");
             int feet = 0; 
             int inch = 0;
-            object expected = QuantityObject.ConvertAndMeasure(feet, inch);
-            object actual = true ;
+            bool expected = QuantityObject.ConvertAndMeasure(feet, inch);
+            bool actual = true ;
             Assert.AreEqual(actual,expected);
         }
 
@@ -30,8 +30,8 @@ namespace QuantityMeasurementTest
         public void MeasureFeetAndInchForNull()
         {
             IQuantityMeasurement QuantityObject = QuantityMeasurementFactory.Create("FeetAndInch");
-            object expected = QuantityObject.ConvertAndMeasure(null, 1);
-            object actual = null;
+            bool expected = QuantityObject.ConvertAndMeasure(null,1);
+            bool actual = false;
             Assert.AreEqual(actual, expected);
         }
 
@@ -41,9 +41,10 @@ namespace QuantityMeasurementTest
         [TestCase]
         public void MeasureFeetAndInchForType()
         {
-            object expected = QuantityMeasurementFactory.Create("FeetAndInch");
-            object actual = "QuantityMeasurementProject.LengthMeasure.FeetAndInch";
-            Assert.AreEqual(actual, expected.GetType().ToString());
+            IQuantityMeasurement QuantityObject = QuantityMeasurementFactory.Create("FeetAndInch");
+            bool expected = QuantityObject.ConvertAndMeasure(1, "12");
+            bool actual = false;
+            Assert.AreEqual(actual, expected);
         }
 
         /// <summary>
@@ -52,8 +53,12 @@ namespace QuantityMeasurementTest
         [TestCase]
         public void MeasureFeetAndInchForRef()
         {
-            object expected = QuantityMeasurementFactory.Create("WrongClass");
-            Assert.AreEqual(null, expected);
+            IQuantityMeasurement QuantityObject = QuantityMeasurementFactory.Create("FeetAndInch");
+            string feet = "12";
+            string inch = "12";
+            bool expected = QuantityObject.ConvertAndMeasure(feet, inch);
+            bool actual = true;
+            Assert.AreEqual(actual, expected);
         }
 
         /// <summary>

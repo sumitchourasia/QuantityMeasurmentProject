@@ -15,13 +15,28 @@ namespace QuantityMeasurementProject.LengthMeasure
         /// <param name="unit1"></param>
         /// <param name="unit2"></param>
         /// <returns></returns>
-        public override object ConvertAndMeasure(object unit1, object unit2)
+        public override bool ConvertAndMeasure(Object feet, Object inch)
         {
-            if (unit1 == null || unit2 == null)
-                return null;
-            int feet = Convert.ToInt32(unit1);
-            int inch = Convert.ToInt32(unit2);
-            return feet * 12 == inch;
+            ////check for null
+            if (feet == null || inch == null)
+                return false;
+
+            ////check for reference
+            if (Object.ReferenceEquals(feet, inch))
+            {
+                return true;
+            }
+
+            ////check for type
+            if (!feet.GetType().Equals(inch.GetType()))
+            {
+                return false;
+            }
+
+            ////check for equality
+            int paramfeet = Convert.ToInt32(feet);
+            int paraminch = Convert.ToInt32(inch);
+            return (paramfeet * 12 == paraminch);
         }
     }
 }

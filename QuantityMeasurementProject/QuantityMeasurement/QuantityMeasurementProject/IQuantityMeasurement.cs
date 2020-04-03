@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace QuantityMeasurementProject
 {
@@ -15,6 +13,6 @@ namespace QuantityMeasurementProject
         /// <param name="unit1"></param>
         /// <param name="unit2"></param>
         /// <returns></returns>
-        object ConvertAndMeasure(object unit1, object unit2);
+        bool ConvertAndMeasure(Object feet, Object inch);
     }
 }

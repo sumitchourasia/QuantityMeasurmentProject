@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace QuantityMeasurementProject.LengthMeasure
 {
@@ -15,6 +13,7 @@ namespace QuantityMeasurementProject.LengthMeasure
         /// <param name="unit1"></param>
         /// <param name="unit2"></param>
         /// <returns></returns>
-        public abstract object ConvertAndMeasure(object unit1, object unit2);
+        public abstract bool ConvertAndMeasure(Object feet, Object inch);
+        
     }
 }
