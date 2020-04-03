@@ -36,7 +36,7 @@ namespace QuantityMeasurementTest
         }
 
         /// <summary>
-        /// TestCase 1.3  to test for reference   
+        /// TestCase 1.3  to test for type   
         /// </summary>
         [TestCase]
         public void MeasureFeetAndInchForType()
