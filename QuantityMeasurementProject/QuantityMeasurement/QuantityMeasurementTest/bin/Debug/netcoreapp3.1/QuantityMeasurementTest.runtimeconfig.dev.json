@@ -2,7 +2,8 @@
   "runtimeOptions": {
     "additionalProbingPaths": [
       "C:\\Users\\stsum\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\stsum\\.nuget\\packages"
+      "C:\\Users\\stsum\\.nuget\\packages",
+      "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
     ]
   }
 }
